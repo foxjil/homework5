@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Добавление торта</title>
+</head>
+<body>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="category">Выбор категории</label>
+            <!-- category: first -->
+            <select autofocus id="category" name="category">
+                <option value="first" selected>Категория 1</option> <!-- + -->
+                <option value="second">Категория 2</option>
+                <option value="third">Категория 3</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="name">Название</label>
+            <input id="name" type="text" name="name">
+        </div>
+        <div>
+            <label for="price">Стоимость</label>
+            <input id="price"
+                   type="number"
+                   name="price"
+                   min="100"
+                   step="50">
+        </div>
+
+        <div>
+            <label for="description">Описание</label>
+            <!-- у тега textarea нет атрибута type  -->
+            <textarea id="description" name="description"></textarea>
+        </div>
+
+        <div>
+            <label for="gluten">Без глютена</label>
+            <input id="gluten" type="checkbox" name="gluten" value="gluten">
+        </div>
+        <div>
+            <!-- группа чекбоков (выбор нескольких варианта из нескольких) -->
+            <!-- additional: [decoration, pack] -->
+            <h4>Дополнительно:</h4>
+            <label>
+                Украшение
+                <input type="checkbox" name="additional[]" value="decoration"> <!-- + -->
+            </label>
+            <label>
+                Надпись
+                <input type="checkbox" name="additional[]" value="text">
+            </label>
+            <label>
+                Подарочная упаковка
+                <input type="checkbox" name="additional[]" value="pack"> <!-- + -->
+            </label>
+        </div>
+
+        <div>
+            <label for="picture">Загрузите изображения</label>
+            <!-- один файл -->
+            <!--<input type="file" name="picture">-->
+            <!-- несколько файлов -->
+            <input id="picture" type="file"
+                   name="picture[]" multiple
+                   accept="image/*"> <!-- .png, .gif  -->
+        </div>
+        <div>
+            <!-- группа радиокнопок (выбор одного варианта из нескольких) -->
+            <!-- answer: third -->
+            <label>
+                Вариант 1
+                <input type="radio" name="answer" value="first" checked>
+            </label>
+            <label>
+                Вариант 2
+                <input type="radio" name="answer" value="second">
+            </label>
+            <label>
+                Вариант 3
+                <input type="radio" name="answer" value="third"> <!-- + -->
+            </label>
+        </div>
+
+    </form>
+</body>
+</html>

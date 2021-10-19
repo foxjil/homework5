@@ -1,0 +1,212 @@
+@import "style.css";
+
+.images {
+    display: flex;
+    margin: 3rem;
+}
+
+.images-main,
+.images-additional {
+    flex: 1;
+}
+
+
+.images-main {
+    position: relative; /*позиционируем эл-ты друг на друга*/
+}
+
+.images-main span {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    right: .5rem;
+    background-color: rgb(241, 226, 241);
+    text-align: center;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.images-additional {
+    display: flex;
+    flex-wrap: wrap; /*разрешить перенос строк*/
+}
+
+.images-additional div { /*для всех div*/
+    width: 50%;
+}
+
+.images-additional img { /*задаем всем картинкам одну высоту*/
+    height: 100%;  
+    display: block;
+}
+
+.images img {
+    height: 100%;
+    display: block;     
+}
+
+.second-raw {
+    display: flex;
+    
+    
+}
+
+.second-raw div {
+    flex: 1;
+}
+
+.second-raw span {
+    display: block;
+}
+
+.category {
+    /*text-transform: capitalize;*/
+    text-decoration: none;
+    color: inherit; /*наследование цвета шрифта*/`
+    text-align: center;
+}
+
+.title {
+    text-transform: uppercase;
+    color: rgb(128, 94, 128);
+    
+    
+}
+
+.price {
+    text-transform: uppercase;
+    color: rgb(68, 51, 68);
+    text-align: center;
+
+}
+
+.to-cart {
+    background-color: rgb(235, 93, 235);
+    color: wheat;
+    text-align: center;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.margin-bottom { /*расстояние между рядами*/
+    margin-bottom: 2rem;
+}
+
+.fourth-raw {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.fourth-raw i {
+    font-size: 5rem;
+    margin-right: 5px;
+}
+.text {
+    opacity: 0; /*скрываем текст (прозрачность от 0 до 1)*/
+    /*visibility: hidden тоже скрыть элемент*/
+    position: absolute;
+    background-color: rgb(236, 209, 236);
+    color: rgb(238, 110, 238);
+    border-radius: 5px;
+    text-align: center;
+    padding: .5rem;
+}
+
+.tip:hover .text { /*когда на подсказку навели мышью, тест, который в него вложен становится полупрозрачным*/
+    opacity: 1;
+    transition: opacity 1s linear; /*2s - через 2 секунды элемент будет становиться непрозраченым ;linear указывает, когда элемент будет становиться непрозрачным*/
+    /*visibility: visible; делаем видимым*/
+}
+
+.tip {
+    position: relative;
+}
+
+.fifth-raw {
+    display: grid;
+    gap: 1.5 rem; /*промежутки между эл-тами сетки*/
+    grid-template-columns: repeat(3, 1fr); /*говорим, что будет 3 колонки, 4ый эл-т не влезет в колонку и сформируется новый ряд*/
+}
+
+.fifth-raw h1 {
+    grid-column: 1/4; /*эл-т занимает с первой по 4ю колонку*/
+}
+.item img {
+    height: 100%;
+    
+}
+
+.fifth-raw div {
+    height: 50%;
+    
+    
+}
+
+.item a {
+    display: block;
+    background-color: rgb(235, 93, 235);
+    color: wheat;
+    text-align: center;
+    padding: .5rem, 0;
+    text-decoration: none;
+    box-shadow: 2px 2px 3px 4px;/*смещение по ширине/ смещение по высоте/ радиус размытия/*/
+}
+
+/*.capital, 
+.category,
+.to-cart.elem::first-letter {
+    text-transform: uppercase;
+}
+*/
+
+.images-main span::first-letter,
+.category::first-letter,
+.to-cart::first-letter {
+    text-transform: uppercase;
+}
+
+
+/*наложение элемента на другой элемент*/
+.images-additional div::before {
+    content: ""; /*обязательно content, иначе работать не будет*/
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color 1s;
+
+}
+.images-additional div { /*позиционирование относительно родителя*/
+    position: relative;
+}
+
+.images-additional div:hover::before {
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 1s;
+}
+
+.item:hover img { /*при наведении масштаб картинки изменится*/
+    transform: scale(1.5);
+    transition: transform 2s linear; /*linear - с одинаковой скоростью */
+}
+
+.item div{ /*если что-то выходит за рамки контейнера*/
+    overflow: hidden; /*спрятать*/
+    /*scroll (полоса прокрутки)*/;
+    /*overflow-x*/
+    /*overflow-y: ;*/ /*или scrall - появляется полоса прокрутки или hidden*/
+}
+
+/*самыми тяжелыми для браузера являются скругления, анимации и трансформации*/
+
+/*при неведении зл-т сдвигается делаем через transform*/
+
+
+
+
+
+
